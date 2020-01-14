@@ -15,3 +15,14 @@ spring:
 
 jwt:
   secret: javainuse
+
+demo:
+  api:
+    context-path: /api/v1/persons
+    endpoints:
+      save: ${demo.api.context-path}/
+      get-by-id: ${demo.api.context-path}/{id}
+      list: ${demo.api.context-path}/
+      update-put: ${demo.api.context-path}/{id}
+      delete: ${demo.api.context-path}/{id}
+      upload: ${demo.api.context-path}/upload-csv
