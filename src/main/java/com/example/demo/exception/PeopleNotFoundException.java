@@ -1,6 +1,6 @@
-package com.example.demo;
+package com.example.demo.exception;
 
-public class PeopleNotFoundException extends Exception {
+public class PeopleNotFoundException extends RuntimeException {
 
     /**
      *

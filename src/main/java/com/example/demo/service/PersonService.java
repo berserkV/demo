@@ -1,15 +1,15 @@
 package com.example.demo.service;
 
-import com.example.demo.PeopleNotFoundException;
+import java.util.List;
+
+import com.example.demo.exception.PeopleNotFoundException;
 import com.example.demo.model.Person;
 import com.example.demo.repository.PersonRepository;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
-import java.util.Map;
 
 @Service
 public class PersonService {
@@ -27,7 +27,7 @@ public class PersonService {
         return personRepository.findAll(firstPageWithTwoElements);
     }
 
-    public Person getById(Long id) throws PeopleNotFoundException {
+    public Person getById(Long id) {
         return personRepository.findById(id)
                 .orElseThrow(() -> new PeopleNotFoundException("1"));
     }
